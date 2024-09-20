@@ -57,7 +57,7 @@ const Aibody = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post(`https://voiceassistance.onrender.com/api/v1/search/QueryAnything`, {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/search/QueryAnything`, {
                 input,
                 chatHistory: messages // Send previous chat history to the backend
             }, {
