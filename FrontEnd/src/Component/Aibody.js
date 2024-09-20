@@ -1,4 +1,5 @@
 import './Aibody.css';
+import './Aibody.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
@@ -64,19 +65,10 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            // Debug log to check the entire response
-            console.log('API Response:', response.data);
-
-            // Check if the response contains success and chatHistory
-            if (response.data.success && Array.isArray(response.data.chatHistory)) {
-                setMessages(response.data.chatHistory);
-            } else {
-                console.error('Unexpected response structure:', response.data);
-                alert("Unexpected response format. Please try again.");
-            }
+            // Update the chat history with the new question and AI response
+            setMessages(response.data.chatHistory);
         } catch (error) {
             console.error('Error fetching response from API:', error);
-            alert("Failed to fetch response. Please check your network connection.");
             setMessages((prevMessages) => [
                 ...prevMessages,
                 { role: 'user', content: input },
@@ -161,7 +153,7 @@ const Aibody = () => {
             {loading ? <p>Loading response...</p> : (
                 <div className='txtresponse'>
                     <textarea
-                        value={messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('') || ''}
+                        value={messages.map((msg, index) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
                         rows="10"
                         cols="50"
                         readOnly
