@@ -64,9 +64,7 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            console.log('API Response:', response.data); // Log the response
-
-            // Check for success and expected structure
+            // Check if the response contains chat history
             if (response.data.success && Array.isArray(response.data.chatHistory)) {
                 setMessages(response.data.chatHistory);
             } else {
@@ -160,7 +158,7 @@ const Aibody = () => {
             {loading ? <p>Loading response...</p> : (
                 <div className='txtresponse'>
                     <textarea
-                        value={Array.isArray(messages) ? messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('') : ''}
+                        value={messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('') || ''}
                         rows="10"
                         cols="50"
                         readOnly
