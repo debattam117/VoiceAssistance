@@ -64,10 +64,16 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            // Update the chat history with the new question and AI response
-            setMessages(response.data.chatHistory);
+            // Ensure chatHistory is an array before setting it
+            if (Array.isArray(response.data.chatHistory)) {
+                setMessages(response.data.chatHistory);
+            } else {
+                console.error('chatHistory is not an array:', response.data.chatHistory);
+                alert("Unexpected response format. Please try again.");
+            }
         } catch (error) {
             console.error('Error fetching response from API:', error);
+            alert("Failed to fetch response. Please check your network connection.");
             setMessages((prevMessages) => [
                 ...prevMessages,
                 { role: 'user', content: input },
@@ -152,7 +158,7 @@ const Aibody = () => {
             {loading ? <p>Loading response...</p> : (
                 <div className='txtresponse'>
                     <textarea
-                        value={messages.map((msg, index) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
+                        value={Array.isArray(messages) ? messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('') : ''}
                         rows="10"
                         cols="50"
                         readOnly
