@@ -66,8 +66,8 @@ const Aibody = () => {
 
             console.log('API Response:', response.data); // Log the response for debugging
 
-            // Check if the response was successful
-            if (response.data.success) {
+            // Check if the response was successful and contains valid data
+            if (response.data.success && Array.isArray(response.data.chatHistory)) {
                 // Update the chat history with the new question and AI response
                 setMessages(response.data.chatHistory);
             } else {
