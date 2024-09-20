@@ -14,14 +14,15 @@ const Aibody = () => {
         const savedChatHistory = JSON.parse(localStorage.getItem('chatHistory'));
         if (Array.isArray(savedChatHistory)) {
             setMessages(savedChatHistory);
+        } else {
+            console.warn('Loaded chat history is not an array, initializing with empty array.');
+            setMessages([]);
         }
     }, []);
 
     // Save chat history to localStorage whenever it updates
     useEffect(() => {
-        if (messages.length > 0) {
-            localStorage.setItem('chatHistory', JSON.stringify(messages));
-        }
+        localStorage.setItem('chatHistory', JSON.stringify(messages));
     }, [messages]);
 
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -64,13 +65,15 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            console.log('API Response:', response.data); // Log the response for debugging
-
-            // Check if chatHistory is an array
+            // Check if chatHistory is an array before setting it
             if (Array.isArray(response.data.chatHistory)) {
                 setMessages(response.data.chatHistory);
             } else {
                 console.error('Chat history is not an array:', response.data.chatHistory);
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    { role: 'assistant', content: 'Error: Invalid chat history format.' }
+                ]);
             }
         } catch (error) {
             console.error('Error fetching response from API:', error);
@@ -158,7 +161,7 @@ const Aibody = () => {
             {loading ? <p>Loading response...</p> : (
                 <div className='txtresponse'>
                     <textarea
-                        value={Array.isArray(messages) ? messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('') : ''}
+                        value={messages.map((msg, index) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
                         rows="10"
                         cols="50"
                         readOnly
