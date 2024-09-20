@@ -64,19 +64,8 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            console.log('API Response:', response.data); // Log the response for debugging
-
-            // Check if the response was successful and contains valid data
-            if (response.data.success && Array.isArray(response.data.chatHistory)) {
-                // Update the chat history with the new question and AI response
-                setMessages(response.data.chatHistory);
-            } else {
-                console.error('API response was not successful:', response.data);
-                setMessages((prevMessages) => [
-                    ...prevMessages,
-                    { role: 'assistant', content: 'Error: Unable to retrieve a valid response.' }
-                ]);
-            }
+            // Update the chat history with the new question and AI response
+            setMessages(response.data.chatHistory);
         } catch (error) {
             console.error('Error fetching response from API:', error);
             setMessages((prevMessages) => [
@@ -163,7 +152,7 @@ const Aibody = () => {
             {loading ? <p>Loading response...</p> : (
                 <div className='txtresponse'>
                     <textarea
-                        value={messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
+                        value={messages.map((msg, index) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
                         rows="10"
                         cols="50"
                         readOnly
