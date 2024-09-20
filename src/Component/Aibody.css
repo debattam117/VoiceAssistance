@@ -1,0 +1,143 @@
+/* Container for the entire app */
+.Contain {
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Main heading */
+  .Contain h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Button container */
+  .butn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px; /* Add gap between buttons */
+  }
+  
+  /* Start button styles */
+  .startbutn {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+  
+  .startbutn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .startbutn:disabled {
+    background-color: #ccc; /* Gray when disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Stop button styles */
+  .stopbutn {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+  
+  .stopbutn:hover {
+    background-color: #e53935; /* Darker red on hover */
+  }
+  
+  .stopbutn:disabled {
+    background-color: #ccc; /* Gray when disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Reset button styles */
+  .resetbutn {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #ff9800; /* Orange */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+  
+  .resetbutn:hover {
+    background-color: #fb8c00; /* Darker orange on hover */
+  }
+  
+  /* Textarea container for the request */
+  .txtrequest {
+    margin-bottom: 20px;
+  }
+  
+  /* Textarea styling */
+  .txtrequest textarea,
+  .txtresponse textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .txtrequest textarea:focus,
+  .txtresponse textarea:focus {
+    outline: none;
+    border-color: #4CAF50; /* Highlight textarea border on focus */
+  }
+  
+  /* Response container */
+  .txtresponse {
+    margin-top: 20px;
+  }
+  
+  /* Textarea for responses */
+  .txtresponse textarea {
+    height: 450px;
+    resize: none;
+  }
+  
+  /* Listening indicator */
+  .butn p {
+    font-size: 15px;
+    color: #555;
+    margin-left: 10px;
+    align-self: center;
+  }
+  
+  /* Add some hover effects for better interaction */
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
