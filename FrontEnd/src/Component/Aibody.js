@@ -64,11 +64,13 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            // Ensure chatHistory is an array before setting it
-            if (Array.isArray(response.data.chatHistory)) {
+            console.log('API Response:', response.data); // Log the response
+
+            // Check for success and expected structure
+            if (response.data.success && Array.isArray(response.data.chatHistory)) {
                 setMessages(response.data.chatHistory);
             } else {
-                console.error('chatHistory is not an array:', response.data.chatHistory);
+                console.error('Unexpected response structure:', response.data);
                 alert("Unexpected response format. Please try again.");
             }
         } catch (error) {
