@@ -56,17 +56,29 @@ const Aibody = () => {
     // Make an API call with the input (text or voice)
     const fetchApiResponse = async (input) => {
         setLoading(true);
+        
 
         try {
+            // Make the API request
+            console.log('API URL:', process.env.REACT_APP_API_URL);
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/search/QueryAnything`, {
                 input,
                 chatHistory: messages // Send previous chat history to the backend
             }, {
                 headers: { 'Content-Type': 'application/json' }
             });
-
-            // Update the chat history with the new question and AI response
-            setMessages(response.data.chatHistory);
+    
+            // Check if the response structure is as expected
+            if (response.data && response.data.chatHistory) {
+                setMessages(response.data.chatHistory); // Update the chat history with the new response
+            } else {
+                console.error('Unexpected response structure:', response.data);
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    { role: 'user', content: input },
+                    { role: 'assistant', content: 'Unexpected response format. Please try again.' }
+                ]);
+            }
         } catch (error) {
             console.error('Error fetching response from API:', error);
             setMessages((prevMessages) => [
@@ -74,12 +86,12 @@ const Aibody = () => {
                 { role: 'user', content: input },
                 { role: 'assistant', content: 'Error fetching response. Please try again.' }
             ]);
+        } finally {
+            setLoading(false); // Ensure loading state is reset
+            setInputText(""); // Clear text input after submission
+            resetTranscript(); // Reset transcript to ensure fresh input for next request
         }
-
-        setLoading(false);
-        setInputText(""); // Clear text input after submission
     };
-
     // Handle text input submission
     const handleTextSubmit = async (e) => {
         e.preventDefault();
