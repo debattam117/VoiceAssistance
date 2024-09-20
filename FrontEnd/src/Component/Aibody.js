@@ -64,7 +64,7 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            // Check if the response contains chat history
+            // Check if the response contains success and chatHistory
             if (response.data.success && Array.isArray(response.data.chatHistory)) {
                 setMessages(response.data.chatHistory);
             } else {
