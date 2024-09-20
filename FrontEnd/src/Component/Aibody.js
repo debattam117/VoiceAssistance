@@ -12,17 +12,16 @@ const Aibody = () => {
     // Load chat history from localStorage on component mount
     useEffect(() => {
         const savedChatHistory = JSON.parse(localStorage.getItem('chatHistory'));
-        if (Array.isArray(savedChatHistory)) {
+        if (savedChatHistory) {
             setMessages(savedChatHistory);
-        } else {
-            console.warn('Loaded chat history is not an array, initializing with empty array.');
-            setMessages([]);
         }
     }, []);
 
     // Save chat history to localStorage whenever it updates
     useEffect(() => {
-        localStorage.setItem('chatHistory', JSON.stringify(messages));
+        if (messages.length > 0) {
+            localStorage.setItem('chatHistory', JSON.stringify(messages));
+        }
     }, [messages]);
 
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -65,14 +64,17 @@ const Aibody = () => {
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            // Check if chatHistory is an array before setting it
-            if (Array.isArray(response.data.chatHistory)) {
+            console.log('API Response:', response.data); // Log the response for debugging
+
+            // Check if the response was successful
+            if (response.data.success) {
+                // Update the chat history with the new question and AI response
                 setMessages(response.data.chatHistory);
             } else {
-                console.error('Chat history is not an array:', response.data.chatHistory);
+                console.error('API response was not successful:', response.data);
                 setMessages((prevMessages) => [
                     ...prevMessages,
-                    { role: 'assistant', content: 'Error: Invalid chat history format.' }
+                    { role: 'assistant', content: 'Error: Unable to retrieve a valid response.' }
                 ]);
             }
         } catch (error) {
@@ -161,7 +163,7 @@ const Aibody = () => {
             {loading ? <p>Loading response...</p> : (
                 <div className='txtresponse'>
                     <textarea
-                        value={messages.map((msg, index) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
+                        value={messages.map((msg) => `Role: ${msg.role}:\nMessage: ${msg.content}\n\n`).join('')}
                         rows="10"
                         cols="50"
                         readOnly
