@@ -57,12 +57,15 @@ const Aibody = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/search/QueryAnything`, {
+            const response = await axios.post(`https://voiceassistance.onrender.com/api/v1/search/QueryAnything`, {
                 input,
                 chatHistory: messages // Send previous chat history to the backend
             }, {
                 headers: { 'Content-Type': 'application/json' }
             });
+
+            // Debug log to check the entire response
+            console.log('API Response:', response.data);
 
             // Check if the response contains success and chatHistory
             if (response.data.success && Array.isArray(response.data.chatHistory)) {
