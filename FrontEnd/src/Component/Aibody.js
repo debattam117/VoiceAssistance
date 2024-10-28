@@ -210,7 +210,7 @@ const Aibody = () => {
                 style={{ padding: "10px", fontSize: "16px" }}
                 disabled={inputText.trim().length > 0}
               >
-                {listening ? (
+                {listening||inputText ? (
                   <i
                     className="fa-solid fa-microphone-slash"
                     style={{ fontSize: "1.5rem" }}

@@ -1,337 +1,343 @@
 body{
-   /* Fallback color */
-  background-image: url('back.png'); /* Replace with your image URL */
-  background-repeat: no-repeat; /* Prevent tiling of the image */
-  
+  /* Fallback color */
+ background-image: url('back.png'); /* Replace with your image URL */
+ background-repeat: no-repeat; /* Prevent tiling of the image */
+
+ 
 }
 
 @media (min-width: 574px) {
-  body {
-    background-image: url('back.png'); /* Replace with your image URL */
-    background-repeat: no-repeat; /* Prevent tiling of the image */
-    background-size: cover; /* Cover the entire body area */
-  }
+ body {
+   background-image: url('back.png'); /* Replace with your image URL */
+   background-repeat: no-repeat; /* Prevent tiling of the image */
+   background-size: cover; /* Cover the entire body area */
+ }
 }
 
 .Contain {
-    padding: 0.6rem;
-    max-width: 700px;
-    margin: auto;
-    background-color: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-  }
+   padding: 0.6rem;
+   max-width: 700px;
+   margin: auto;
+   background-color: none;
+   border-radius: 10px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   font-family: 'Poppins', sans-serif;
+ }
+ 
+ /* Main heading */
+ .nav{
+   display: flex;
+   margin-top: -0.3rem;
   
-  /* Main heading */
-  .nav{
-    display: flex;
-    margin-top: -0.3rem;
-   
-  }
+ }
 .nav1{
-  flex-basis: 35%;
+ flex-basis: 35%;
 }
 .nav2{
-  flex-basis: 45%;
-  margin-left: 1rem;
+ flex-basis: 45%;
+ margin-left: 1rem;
 }
 
 .nav3 .resetbutn {
-  flex-basis: 10%;
-  margin-top: 0.9rem;
-  background-color: #ff9800; /* Orange */
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 60%;
-  margin-left: 0.3rem;
-  
+ flex-basis: 10%;
+ margin-top: 0.9rem;
+ background-color: #ff9800; /* Orange */
+ color: white;
+ border: none;
+ cursor: pointer;
+ border-radius: 60%;
+ margin-left: 0.3rem;
+ 
 }
 
 .resetbutn{
-  font-size: 1rem;
-  width: 2rem;
-  height: 2rem;
-  padding: 1rem;
+ font-size: 1rem;
+ width: 2rem;
+ height: 2rem;
+ padding: 1rem;
 }
 
 .resetbutn:hover {
-  background-color: #fb8c00; /* Darker orange on hover */
+ background-color: #fb8c00; /* Darker orange on hover */
 }
 
 .nav1 img{
-  height: 2.2rem;
-  width: 2.2rem;
-  margin-top: 0.7rem;
-  margin-left: 0.6rem;
+ height: 2.2rem;
+ width: 2.2rem;
+ margin-top: 0.7rem;
+ margin-left: 0.6rem;
 }
 
 .nav2 h1{
-  font-family: "Playwrite GB S", cursive;
-  font-size: 1.4rem;
-  text-align: right;
-  color: white;
-  margin-top: 0.7rem;
+ font-family: "Playwrite GB S", cursive;
+ font-size: 1.4rem;
+ text-align: right;
+ color: white;
+ margin-top: 0.7rem;
 }
-  
-  /* Button container */
-  .butn {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    gap: 10px; /* Add gap between buttons */
-  }
-  
-  /* Start button styles */
-  /* .startbutn {
-    padding: 1px;
-    font-size: 16px;
-    background-color: #4CAF50; 
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    flex: 1;
-  } */
-  
-  /* .startbutn:hover {
-    background-color: #45a049; 
-  }
-  
-  .startbutn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-   */
-  /* Stop button styles */
-  /* .stopbutn {
-    padding: 12px;
-    font-size: 16px;
-    background-color: #f44336; 
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    flex: 1;
-  } */
-  
-  /* .stopbutn:hover {
-    background-color: #e53935; 
-  }
-  
-  .stopbutn:disabled {
-    background-color: #ccc; /
-    cursor: not-allowed;
-  }
-   */
+ 
+ /* Button container */
+ .butn {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   gap: 10px; /* Add gap between buttons */
+ }
+ 
+ /* Start button styles */
+ /* .startbutn {
+   padding: 1px;
+   font-size: 16px;
+   background-color: #4CAF50; 
+   color: white;
+   border: none;
+   cursor: pointer;
+   border-radius: 6px;
+   transition: background-color 0.3s ease;
+   flex: 1;
+ } */
+ 
+ /* .startbutn:hover {
+   background-color: #45a049; 
+ }
+ 
+ .startbutn:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+ }
+  */
+ /* Stop button styles */
+ /* .stopbutn {
+   padding: 12px;
+   font-size: 16px;
+   background-color: #f44336; 
+   color: white;
+   border: none;
+   cursor: pointer;
+   border-radius: 6px;
+   transition: background-color 0.3s ease;
+   flex: 1;
+ } */
+ 
+ /* .stopbutn:hover {
+   background-color: #e53935; 
+ }
+ 
+ .stopbutn:disabled {
+   background-color: #ccc; /
+   cursor: not-allowed;
+ }
+  */
 
-  .txtresponse textarea {
-    width: 100%;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 6px;
-    font-size: 15px;
-    box-sizing: border-box;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
-  }
+ .txtresponse textarea {
+   width: 100%;
+   border: 1px solid #ddd;
+   padding: 15px;
+   border-radius: 6px;
+   font-size: 15px;
+   box-sizing: border-box;
+   background-color: #fff;
+   transition: border-color 0.3s ease;
+ }
+ 
+ 
+ .txtresponse textarea:focus {
+   outline: none;
+   border-color: #4CAF50; /* Highlight textarea border on focus */
+ }
+ 
+ /* Response container */
+ .txtresponse {
+   margin-top: 20px;
+ }
+ 
+ /* Textarea for responses */
+ .txtresponse textarea {
+   height: 450px;
+   resize: none;
+ }
+ 
+ /* Listening indicator */
+ .butn p {
+   font-size: 15px;
+   color: #555;
+   margin-left: 10px;
+   align-self: center;
+ }
+ 
+ 
+ 
+ button:active {
+   transform: translateY(0);
+   box-shadow: none;
+ }
+ 
   
-  
-  .txtresponse textarea:focus {
-    outline: none;
-    border-color: #4CAF50; /* Highlight textarea border on focus */
-  }
-  
-  /* Response container */
-  .txtresponse {
-    margin-top: 20px;
-  }
-  
-  /* Textarea for responses */
-  .txtresponse textarea {
-    height: 450px;
-    resize: none;
-  }
-  
-  /* Listening indicator */
-  .butn p {
-    font-size: 15px;
-    color: #555;
-    margin-left: 10px;
-    align-self: center;
-  }
-  
-  
-  
-  button:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  
-   
-  .respcontainer{
-    display: flex;
-    border-radius: 6px;
-    height: 3rem;
-    border-radius: 2rem 2rem 2rem 2rem;
-    background-color: rgba(212, 237, 218, 0.2);
-    position: absolute;
-    bottom: 1.3rem;
-    width: 94.5%;
-  }
+ .respcontainer{
+   display: flex;
+   border-radius: 6px;
+   height: 3rem;
+   border-radius: 2rem 2rem 2rem 2rem;
+   background-color: rgba(212, 237, 218, 0.2);
+   position: absolute;
+   bottom: 1.3rem;
+   width: 94.5%;
+ }
 
-  @media (min-width: 700px) {
-    .respcontainer {
-        width: 700px; /* Set a fixed width above 750px screen size */
-    }
+ @media (min-width: 700px) {
+   .respcontainer {
+       width: 700px; /* Set a fixed width above 750px screen size */
+   }
 }
 
-  .txtrequest{
-    flex-basis: 90%;
-    width: 100%;
-    margin: 0.1rem 0;
-  }
+ .txtrequest{
+   flex-basis: 90%;
+   width: 100%;
+   margin: 0.1rem 0;
+ }
 
-  .buttnn{
-    flex-basis: 10%;
-    display: flex;
-    justify-content: center;
-    height: 2.6rem;
-    margin-top: 0.1rem;
-    margin-right: 0.5rem;
-  }
+ .buttnn{
+   flex-basis: 10%;
+   display: flex;
+   justify-content: center;
+   height: 2.6rem;
+   margin-top: 0.1rem;
+   margin-right: 0.5rem;
+ }
 
-  .txtrequest textarea{
-    width: 100%;
-    border: none;
-    font-size: 1.2rem;
-    box-sizing: border-box;
-    
-    margin-top: 0.5rem;
-    margin-left: 0.2rem;
-    background-color: rgba(212, 237, 218, 0);
-    color: white;
-    
-    resize: none;
-    overflow-y: 2rem;
-   max-height: 3rem;
-    
-  }
-
-  .startbutn1{
+ .txtrequest textarea{
+   width: 100%;
+   border: none;
+   font-size: 1rem;
+   box-sizing: border-box;
    
-     border: none;
-     border-radius: 50%;
-     background-color: rgba(212, 237, 218, 0);
-     color: black;
-     font-size: 1.5rem;
-     margin-top: 0.3rem;    
-    
-  }
+   margin-top: 0.3rem;
+   margin-left: 0.3rem;
+   background-color: rgba(212, 237, 218, 0);
+   color: white;
+   font-family: "Playwrite GB S", cursive; 
+   resize: none;
+   overflow-y: 2rem;
+  max-height: 3rem;
+   
+ }
 
-  .txtrequest textarea:focus {
-    outline: none;
-    border-color:3px solid white; /* Highlight textarea border on focus */
-    
-  }
-
-  .txtrequest textarea::placeholder{
-    color: rgb(187, 180, 180);
-  }
-
-  .lis-butn{
-    background-color: rgba(212, 237, 218, 0);
-    border-radius: 50%;
-    margin-left: 0.5rem;
-    
-  }
-
-  .toggle-listen-btn{
-    background-color: rgba(212, 237, 218, 0);
+ .startbutn1{
+  
     border: none;
     border-radius: 50%;
-    margin-top: 0.2rem;
+    background-color: rgba(212, 237, 218, 0);
+    color: black;
     font-size: 1.5rem;
-    
-    
-  }
+    margin-top: 0.3rem;    
+   
+ }
+
+ .txtrequest textarea:focus {
+   outline: none;
+   border-color:3px solid white; /* Highlight textarea border on focus */
+   
+ }
+
+ .txtrequest textarea::placeholder{
+   color: rgb(187, 180, 180);
+ }
+
+ .lis-butn{
+   background-color: rgba(212, 237, 218, 0);
+   border-radius: 50%;
+   margin-left: 0.5rem;
+   
+ }
+
+ .toggle-listen-btn{
+   background-color: rgba(212, 237, 218, 0);
+   border: none;
+   border-radius: 50%;
+   margin-top: 0.2rem;
+   font-size: 1.5rem;
+   
+   
+ }
+
+ .toggle-listen-btn:disabled {
+  
+  color:black;
+  background-color: rgba(212, 237, 218, 0);
+}
 
 
-  .txtresponse {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem; /* Add space between messages */
-    padding: 0.5rem;
-    height:29rem;
-    overflow-y: auto;
-    
+ .txtresponse {
+   display: flex;
+   flex-direction: column;
+   gap: 1.2rem; /* Add space between messages */
+   padding: 0.5rem;
+   height:29rem;
+   overflow-y: auto;
+   
 }
 
 .user-message {
-  align-self: flex-end; /* Align user messages to the right */
-  background-color: rgba(204, 229, 255, 0.2); /* Light blue background with 80% opacity */
-  border-radius: 1.8rem;
-  max-width: 70%; /* Limit width */
-  word-wrap: break-word; /* Break long words */
-  font-size: 0.7rem;
-  padding: 0.2rem;
-  font-family: "Playwrite GB S", cursive;    
-  color: white;
+ align-self: flex-end; /* Align user messages to the right */
+ background-color: rgba(204, 229, 255, 0.2); /* Light blue background with 80% opacity */
+ border-radius: 1.8rem;
+ max-width: 70%; /* Limit width */
+ word-wrap: break-word; /* Break long words */
+ font-size: 0.7rem;
+ padding: 0.2rem;
+ font-family: "Playwrite GB S", cursive;    
+ color: white;
 }
 
 .assistant-message {
-    font-size: 0.7rem;
-    align-self: flex-start; /* Align assistant messages to the left */
-    background-color: rgba(212, 237, 218, 0.2); /* Light green background */
-    border-radius: 1.8rem;
-    max-width: 100%; /* Limit width */
-    word-wrap: break-word; /* Break long words */
-    padding: 0.2rem;
-    font-family: "Playwrite GB S", cursive;
-    color: white;
+   font-size: 0.7rem;
+   align-self: flex-start; /* Align assistant messages to the left */
+   background-color: rgba(212, 237, 218, 0.2); /* Light green background */
+   border-radius: 1.8rem;
+   max-width: 100%; /* Limit width */
+   word-wrap: break-word; /* Break long words */
+   padding: 0.2rem;
+   font-family: "Playwrite GB S", cursive;
+   color: white;
 }
 
 .assistant-message p{
-  margin-left: 1rem;
-  margin-right: 1rem;
+ margin-left: 1rem;
+ margin-right: 1rem;
 }
 
 .user-message p{
-  margin-right: 1rem;
-  margin-left: 1rem;
+ margin-right: 1rem;
+ margin-left: 1rem;
 }
 
 .spinner {
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 5rem; /* Size of the spinner */
-  height: 5rem; /* Size of the spinner */
-  animation: spin 1s linear infinite; /* Animation for spinning */
-  margin-left: 8.5rem;
-  margin-top: 12rem;
+ border: 8px solid #f3f3f3; /* Light grey */
+ border-top: 8px solid #3498db; /* Blue */
+ border-radius: 50%;
+ width: 5rem; /* Size of the spinner */
+ height: 5rem; /* Size of the spinner */
+ animation: spin 1s linear infinite; /* Animation for spinning */
+ margin-left: 8.5rem;
+ margin-top: 12rem;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+ 0% { transform: rotate(0deg); }
+ 100% { transform: rotate(360deg); }
 }
 
 .no-messages {
-  font-size: 3rem; /* Adjust size */
-  color: white; /* Optional color */
-  text-align: center; /* Center the note */
-  margin-top: 12rem; /* Add some space */
-  margin-left: 0.4rem;
+ font-size: 3rem; /* Adjust size */
+ color: white; /* Optional color */
+ text-align: center; /* Center the note */
+ margin-top: 12rem; /* Add some space */
+ margin-left: 0.4rem;
 }
 
 .no-messages p {
-  font-size: 1.2rem; /* Adjust size */
-  font-family: "Playwrite GB S", cursive;
-  margin-top: 2.1rem;
-  color: white;
+ font-size: 1.2rem; /* Adjust size */
+ font-family: "Playwrite GB S", cursive;
+ margin-top: 2.1rem;
+ color: white;
 }
-
